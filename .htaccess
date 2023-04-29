@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+ ReWriteEngine On
+ RewriteCond $1 !^(index\.php|resources|assets|robots\.txt)
+ ReWriteCond %{REQUEST_FILENAME} !-f
+ ReWriteCond %{REQUEST_FILENAME} !-d
+ ReWriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
+<ifmodule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript
+</ifmodule>
